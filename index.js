@@ -12,11 +12,13 @@ module.exports = exports = function(params, packFn) {
 
     var origWrite = pack.write;
     pack.write = function(row) {
-        var dep = row.sourceFile;
-        if (params.basedir) {
-            dep = path.relative(params.basedir, row.sourceFile);
+        if(row.sourceFile) {
+            var dep = row.sourceFile;
+            if (params.basedir) {
+                dep = path.relative(params.basedir, row.sourceFile);
+            }
+            pack.emit('dependency', dep);
         }
-        pack.emit('dependency', dep);
 
         origWrite.call(pack, row);
     }
