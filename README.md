@@ -23,4 +23,4 @@ Sample usage:
         console.log("Dependencies:", deps);
     });
 
-Dependencies are automatically resolved relative to the `basedir` if it is passed to `browserfy()`.
+If `basedir` is passed to `browserify()`, then dependencies will be relative to basedir, otherwise they will be absolute filenames.
