@@ -24,3 +24,6 @@ Sample usage:
     });
 
 If `basedir` is passed to `browserify()`, then dependencies will be relative to basedir, otherwise they will be absolute filenames.
+
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/jwalton/browser-pack-with-deps.svg)](https://greenkeeper.io/)
